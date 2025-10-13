@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --msn-light: #f0f7fa;
+    --msn-dark: #d4e1f4;
+    --msn-darker: #b1c0d6;
+    --msn-footer: #fafbfe;
+    --msn-border: #a5aab6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+    --color-msn-light: var(--msn-light);
+    --color-msn-dark: var(--msn-dark);
+    --color-msn-darker: var(--msn-darker);
+    --color-msn-border: var(--msn-border);
+    --color-msn-banner: var(--msn-footer);
+    --shadow-sm-and-msn-inset: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1), inset -3px -3px 6px var(--msn-darker);
+    --shadow-lg-and-msn-inset: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1), inset -3px -3px 6px var(--msn-darker);
+    --shadow-footer: inset -2px -2px 4px var(--msn-darker);
+    --font-winxptahoma: "Windows XP Tahoma", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
