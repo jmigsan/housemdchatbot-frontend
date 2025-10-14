@@ -1,5 +1,7 @@
 # House MD Chatbot Frontend
 
+This is the backend to the [House MD Chatbot Backend](https://github.com/jmigsan/housemdchatbot-backend) and is designed to work with that repo.
+
 A nostalgic chatbot interface styled after MSN Messenger on Windows XP, featuring real-time conversations with Dr. Gregory House.
 
 ## 🌟 Features
