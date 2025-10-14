@@ -23,7 +23,7 @@ A nostalgic chatbot interface styled after MSN Messenger on Windows XP, featurin
 1. **Clone the repository**
 
     ```bash
-    git clone <repository-url>
+    git clone housemdchatbot-frontend
     cd housemdchatbot-frontend
     ```
 
