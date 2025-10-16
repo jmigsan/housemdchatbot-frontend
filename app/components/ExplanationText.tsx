@@ -9,23 +9,23 @@ const ExplanationText = () => {
             <h1>How I made this:</h1>
             <p className='pl-5'>
                 <span className='underline'>Finetuning:</span> I finetuned a
-                Qwen3 4B model using Unsloth on the cloud using GCP's Compute
-                Engine. I finetuned the model on House's personality by
-                community made transcripts of episodes 3 to 9. I created
-                training data based on these episodes. I also created synthetic
-                training data using these episdodes and included them in the
-                finetuning training dataset.
+                Qwen3 4B model using Unsloth on the cloud using GCP&apos;s
+                Compute Engine. I finetuned the model on House&apos;s
+                personality by community made transcripts of episodes 3 to 9. I
+                created training data based on these episodes. I also created
+                synthetic training data using these episdodes and included them
+                in the finetuning training dataset.
             </p>
             <p className='pl-5'>
                 <span className='underline'>RAG:</span> This chatbot has access
                 to various medical Wikipedia articles. Including categories such
                 as: Medical diagnosis, Diseases and disorders, Rare diseases. I
-                got these articles using Wikipedia's Export feature. I parsed
-                the data using wikiextractor. Then upsert the data into a
+                got these articles using Wikipedia&apos;s Export feature. I
+                parsed the data using wikiextractor. Then upsert the data into a
                 Pinecone vector database.
             </p>
             <p className='pl-5'>
-                <span className='underline'>Tech stack:</span> I'm using
+                <span className='underline'>Tech stack:</span> I&apos;m using
                 Next.js, React, Tailwind CSS, TypeScript, Python, FastAPI,
                 Vercel, and GCP.
             </p>
