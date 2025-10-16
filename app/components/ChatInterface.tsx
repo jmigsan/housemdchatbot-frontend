@@ -1,14 +1,19 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
 import { Message } from "@/lib/types";
 import MessageInputFooter from "./MessageInputFooter";
 
-const ChatInterface = () => {
+const ChatInterface = ({
+    setShowFirstTimeMessage,
+}: {
+    setShowFirstTimeMessage: Dispatch<SetStateAction<boolean>>;
+}) => {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState<Message[]>([]);
     const chatContainerRef = useRef<HTMLDivElement>(null);
     const ws = useRef<WebSocket | null>(null);
+    const [loading, setLoading] = useState(false);
 
     const initialMessage: Message = {
         role: "model",
@@ -46,6 +51,8 @@ const ChatInterface = () => {
                     timestamp: new Date(data.timestamp),
                 },
             ]);
+            setLoading(false);
+            setShowFirstTimeMessage(false);
         };
 
         ws.current.onerror = (error) => {
@@ -53,6 +60,8 @@ const ChatInterface = () => {
                 "WebSocket error:",
                 JSON.stringify(error, Object.getOwnPropertyNames(error))
             );
+            setLoading(false);
+            setShowFirstTimeMessage(false);
         };
 
         ws.current.onclose = () => {
@@ -89,6 +98,11 @@ const ChatInterface = () => {
             { role: "user", content: input, timestamp: new Date() },
         ]);
         setInput("");
+        setLoading(true);
+
+        if (messages.length <= 2) {
+            setShowFirstTimeMessage(true);
+        }
     };
 
     return (
@@ -127,8 +141,8 @@ const ChatInterface = () => {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
-                                if (!e.shiftKey) {
-                                    e.preventDefault();
+                                e.preventDefault();
+                                if (!loading && !e.shiftKey) {
                                     handleSend();
                                 }
                             }
@@ -138,7 +152,8 @@ const ChatInterface = () => {
                     <div className='flex items-center justify-center p-[5px]'>
                         <button
                             onClick={handleSend}
-                            className='shadow-sm-and-msn-inset rounded-md p-[18px] border-2 border-msn-border hover:cursor-pointer'
+                            className='shadow-sm-and-msn-inset rounded-md p-[18px] border-2 border-msn-border hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
+                            disabled={loading}
                         >
                             Send
                         </button>

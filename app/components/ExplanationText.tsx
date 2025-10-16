@@ -1,15 +1,9 @@
 const ExplanationText = () => {
     return (
         <div>
-            <h1>Problem:</h1>
+            <h1>What is this:</h1>
             <p className='pl-5'>
-                After <span className='italic'>House MD</span> finished, I miss
-                listening to Dr Gregory House talk. I want to hear medicine
-                wisdom in his sarcastic, cynical, and witty tone.
-            </p>
-            <h1>Solution:</h1>
-            <p className='pl-5'>
-                I created this chatbot that sounds like Dr Gregory House and has
+                I created a chatbot that sounds like Dr Gregory House and has
                 knowledge of various medical topics from Wikipedia.
             </p>
             <h1>How I made this:</h1>
@@ -37,9 +31,39 @@ const ExplanationText = () => {
             </p>
             <h1>Attribution:</h1>
             <p className='pl-5'>
-                Background from. Taskbar from. Greggory House image from. MSN
-                Messenger logo from. Font from. Line, Square, Cross svg icons
-                from.
+                Background from{" "}
+                <a
+                    className='underline'
+                    href='https://www.artsy.net/article/artsy-editorial-story-worlds-famous-desktop-background'
+                >
+                    Artsy.net
+                </a>
+                . Taskbar image from{" "}
+                <a
+                    className='underline'
+                    href='https://www.nicepng.com/ourpic/u2w7a9t4q8o0w7t4_nintendofan12s-fun-stuff-images-windows-xp-desktop-windows/'
+                >
+                    Nintendofan12
+                </a>
+                . Greggory House image from. MSN Avatar from{" "}
+                <a
+                    className='underline'
+                    href='https://www.reddit.com/r/FrutigerAero/comments/110sgm7/msn_avatars_of_all_colors/'
+                >
+                    FrutigerAero
+                </a>
+                . Font is{" "}
+                <a
+                    className='underline'
+                    href='https://fontstruct.com/fontstructions/show/735108/fs_tahoma_8px'
+                >
+                    fs Tahoma 8px
+                </a>
+                . Line, Square, Cross svg icons from{" "}
+                <a className='underline' href='https://freesvgicons.com/'>
+                    freesvgicons.com
+                </a>
+                .
             </p>
             <h1>Links:</h1>
             <ul className='list-disc pl-5'>

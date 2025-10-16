@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import ChatInterface from "./components/ChatInterface";
 import MsnHeader from "./components/MsnHeader";
 import MsnFooter from "./components/MsnFooter";
@@ -7,8 +11,11 @@ import winXpDesktop from "@/app/assets/win xp desktop.webp";
 import winXpTaskbar from "@/app/assets/win xp taskbar.png";
 import WindowBorder from "./components/WindowBorder";
 import ExplanationText from "./components/ExplanationText";
+import FirstMessageProgressBar from "./components/FirstMessageProgressBar";
 
 const Home = () => {
+    const [showFirstTimeMessage, setShowFirstTimeMessage] = useState(false);
+
     return (
         // Outer container
         <div className='flex justify-center items-center h-screen -mt-5'>
@@ -37,7 +44,11 @@ const Home = () => {
                         <MsnHeader />
                         <div className='shadow-lg-and-msn-inset h-full flex p-3 pb-4 gap-2'>
                             {/* Chat interface */}
-                            <ChatInterface />
+                            <ChatInterface
+                                setShowFirstTimeMessage={
+                                    setShowFirstTimeMessage
+                                }
+                            />
                             {/* Images */}
                             <ProfileImages />
                         </div>
@@ -55,6 +66,16 @@ const Home = () => {
                     </div>
                 </WindowBorder>
             </div>
+
+            {showFirstTimeMessage && (
+                <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                    <WindowBorder title='Loading...'>
+                        <div className='flex flex-col w-[25rem] rounded-t-xl rounded-b-sm shadow-lg-and-msn-inset overflow-hidden bg-[#ede8d7] p-1 pt-2'>
+                            <FirstMessageProgressBar />
+                        </div>
+                    </WindowBorder>
+                </div>
+            )}
         </div>
     );
 };
