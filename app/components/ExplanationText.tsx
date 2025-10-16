@@ -27,7 +27,7 @@ const ExplanationText = () => {
             <p className='pl-5'>
                 <span className='underline'>Tech stack:</span> I&apos;m using
                 Next.js, React, Tailwind CSS, TypeScript, Python, FastAPI,
-                Vercel, and GCP.
+                Vercel, GCP, and Fly.io.
             </p>
             <h1>Attribution:</h1>
             <p className='pl-5'>
