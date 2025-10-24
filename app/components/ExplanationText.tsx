@@ -13,7 +13,7 @@ const ExplanationText = () => {
                 Compute Engine. I finetuned the model on House&apos;s
                 personality by community made transcripts of episodes 3 to 9. I
                 created training data based on these episodes. I also created
-                synthetic training data using these episdodes and included them
+                synthetic training data using these episodes and included them
                 in the finetuning training dataset.
             </p>
             <p className='pl-5'>
@@ -45,7 +45,7 @@ const ExplanationText = () => {
                 >
                     Nintendofan12
                 </a>
-                . Greggory House image from. MSN Avatar from{" "}
+                . Gregory House image from. MSN Avatar from{" "}
                 <a
                     className='underline'
                     href='https://www.reddit.com/r/FrutigerAero/comments/110sgm7/msn_avatars_of_all_colors/'
