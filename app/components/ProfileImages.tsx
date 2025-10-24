@@ -15,7 +15,7 @@ const ProfileImages = () => {
                 <Image
                     src={image}
                     alt={alt}
-                    className='rounded-lg w-32 border-1 border-msn-border'
+                    className='rounded-lg border-1 border-msn-border'
                 />
                 <div className='flex justify-end p-1 pt-2'>
                     <div className='w-0 h-0 border-x-5 border-t-7 border-l-transparent border-r-transparent border-t-gray-700' />

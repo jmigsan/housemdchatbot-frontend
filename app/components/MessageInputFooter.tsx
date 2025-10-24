@@ -3,7 +3,7 @@ import { Message } from "@/lib/types";
 const MessageInputFooter = ({ messages }: { messages: Message[] }) => {
     const InputFooterBorder = ({ children }: { children: React.ReactNode }) => {
         return (
-            <div className='bg-linear-to-b from-msn-dark to-msn-light border-t-2 border-msn-border text-[17px] pl-2'>
+            <div className='leading-4 bg-linear-to-b from-msn-dark to-msn-light border-t-2 border-msn-border text-[17px] pl-2'>
                 {children}
             </div>
         );

@@ -18,53 +18,57 @@ const Home = () => {
 
     return (
         // Outer container
-        <div className='flex justify-center items-center h-screen -mt-5'>
+        <div className='flex justify-center items-center lg:h-screen lg:-mt-5'>
             {/* Background */}
             <Image
                 src={winXpDesktop}
                 alt='Website background'
-                fill={true}
                 quality={100}
-                style={{ zIndex: -2, objectFit: "cover" }}
+                className='fixed top-0 left-0 w-screen h-screen -z-10 object-cover'
             />
             <Image
                 src={winXpTaskbar}
                 alt='taskbar'
-                fill={true}
                 quality={100}
-                style={{ zIndex: -1 }}
+                className='fixed top-0 left-0 w-screen h-screen -z-10'
             />
 
-            <div className='flex gap-10'>
+            <div className='flex flex-col gap-10 lg:flex-row items-center m-5 lg:m-0'>
                 {/* Chatbot */}
-                <WindowBorder title='Dr Gregory House - Conversation'>
-                    {/* Chat container */}
-                    <div className='flex flex-col w-[41rem] h-[33rem] rounded-t-xl rounded-b-sm shadow-lg-and-msn-inset overflow-hidden bg-linear-to-b from-msn-dark via-msn-light to-msn-light'>
-                        {/* Header */}
-                        <MsnHeader />
-                        <div className='shadow-lg-and-msn-inset h-full flex p-3 pb-4 gap-2'>
-                            {/* Chat interface */}
-                            <ChatInterface
-                                setShowFirstTimeMessage={
-                                    setShowFirstTimeMessage
-                                }
-                            />
-                            {/* Images */}
-                            <ProfileImages />
+                <div className='sm:w-[41.5rem]'>
+                    <WindowBorder title='Dr Gregory House - Conversation'>
+                        {/* Chat container */}
+                        <div className='flex flex-col lg:w-[41rem] h-[33rem] rounded-t-xl rounded-b-sm shadow-lg-and-msn-inset overflow-hidden bg-linear-to-b from-msn-dark via-msn-light to-msn-light'>
+                            {/* Header */}
+                            <MsnHeader />
+                            <div className='shadow-lg-and-msn-inset h-full flex p-3 pb-4 gap-2'>
+                                {/* Chat interface */}
+                                <ChatInterface
+                                    setShowFirstTimeMessage={
+                                        setShowFirstTimeMessage
+                                    }
+                                />
+                                {/* Images */}
+                                <div className='hidden sm:block'>
+                                    <ProfileImages />
+                                </div>
+                            </div>
+                            {/* Footer */}
+                            <MsnFooter />
                         </div>
-                        {/* Footer */}
-                        <MsnFooter />
-                    </div>
-                </WindowBorder>
+                    </WindowBorder>
+                </div>
 
                 {/* Explanation */}
-                <WindowBorder title='How I made this'>
-                    <div className='flex flex-col w-[20rem] h-[33rem] rounded-t-xl rounded-b-sm shadow-lg-and-msn-inset overflow-hidden bg-[#ede8d7] p-1 pt-2'>
-                        <div className='bg-[#fdfcff] border-2 border-[#b8b5ad] rounded-sm py-1 px-3 overflow-y-scroll'>
-                            <ExplanationText />
+                <div className='sm:w-[41.5rem] lg:w-auto'>
+                    <WindowBorder title='How I made this'>
+                        <div className='flex flex-col lg:w-[20rem] h-[33rem] rounded-t-xl rounded-b-sm shadow-lg-and-msn-inset overflow-hidden bg-[#ede8d7] p-1 pt-2'>
+                            <div className='bg-[#fdfcff] border-2 border-[#b8b5ad] rounded-sm py-1 px-3 overflow-y-scroll'>
+                                <ExplanationText />
+                            </div>
                         </div>
-                    </div>
-                </WindowBorder>
+                    </WindowBorder>
+                </div>
             </div>
 
             {showFirstTimeMessage && (

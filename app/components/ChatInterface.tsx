@@ -34,7 +34,10 @@ const ChatInterface = ({
     }, [messages]);
 
     useEffect(() => {
-        ws.current = new WebSocket(process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/api/ws/chat/runpod");
+        ws.current = new WebSocket(
+            process.env.NEXT_PUBLIC_WS_URL ||
+                "ws://localhost:8000/api/ws/chat/runpod"
+        );
 
         ws.current.onopen = () => {
             console.log("WebSocket connection established");
@@ -108,7 +111,8 @@ const ChatInterface = ({
     return (
         <div className='flex flex-col gap-2'>
             {/* Message box */}
-            <div className='w-[29.7rem] h-[20rem] border-2 border-msn-border rounded-t-xl overflow-hidden'>
+            {/* <div className='w-[29.7rem] h-[20rem] border-2 border-msn-border rounded-t-xl overflow-hidden'> */}
+            <div className='w-full h-[20rem] border-2 border-msn-border rounded-t-xl overflow-hidden'>
                 {/* Header */}
                 <div className='bg-msn-light p-1 pl-2 border-b-2 border-msn-border shadow-sm-and-msn-inset'>
                     Dr Gregory House
@@ -134,7 +138,8 @@ const ChatInterface = ({
                 </div>
             </div>
             {/* Input box */}
-            <div className='w-[29.7rem] flex-grow bg-white border-2 border-msn-border rounded-xl overflow-hidden flex flex-col'>
+            {/* <div className='w-[29.7rem] flex-grow bg-white border-2 border-msn-border rounded-xl overflow-hidden flex flex-col'> */}
+            <div className='w-full flex-grow bg-white border-2 border-msn-border rounded-xl overflow-hidden flex flex-col'>
                 <div className='flex flex-grow'>
                     <textarea
                         value={input}
@@ -147,7 +152,7 @@ const ChatInterface = ({
                                 }
                             }
                         }}
-                        className='resize-none focus:outline-none w-[25rem] px-2 py-1 leading-tight'
+                        className='resize-none focus:outline-none w-full px-2 py-1 leading-tight'
                     />
                     <div className='flex items-center justify-center p-[5px]'>
                         <button
