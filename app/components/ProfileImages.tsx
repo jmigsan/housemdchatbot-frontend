@@ -25,7 +25,7 @@ const ProfileImages = () => {
     };
 
     return (
-        <div className='flex flex-col justify-between'>
+        <div className='flex flex-col justify-between h-full w-35'>
             {/* Dr Gregory house */}
             <ProfileImageBorder image={drHouseImage} alt='Dr Gregory house' />
             {/* You */}

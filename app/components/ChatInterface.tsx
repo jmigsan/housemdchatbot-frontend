@@ -112,14 +112,14 @@ const ChatInterface = ({
         <div className='flex flex-col gap-2'>
             {/* Message box */}
             {/* <div className='w-[29.7rem] h-[20rem] border-2 border-msn-border rounded-t-xl overflow-hidden'> */}
-            <div className='w-full h-[20rem] border-2 border-msn-border rounded-t-xl overflow-hidden'>
+            <div className='w-full h-[20rem] border-2 border-msn-border rounded-t-xl overflow-hidden flex flex-col'>
                 {/* Header */}
                 <div className='bg-msn-light p-1 pl-2 border-b-2 border-msn-border shadow-sm-and-msn-inset'>
                     Dr Gregory House
                 </div>
                 {/* Messages */}
                 <div
-                    className='bg-white pt-1 h-full overflow-scroll pb-6 break-words'
+                    className='bg-white pt-1 flex-1 overflow-y-auto pb-2 break-words'
                     ref={chatContainerRef}
                 >
                     {messages.map((message, index) => (
